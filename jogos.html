@@ -6,136 +6,40 @@
     <title>GameWorld - Jogos</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #050f1e 0%, #071a3d 50%, #0a2463 100%);
-            min-height: 100vh;
-            color: #ffffff;
-        }
-
-        header {
-            background-color: #0f3460;
-            border-bottom: 2px solid #ff2e63;
-            padding: 20px 0;
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #050f1e 0%, #071a3d 50%, #0a2463 100%); min-height: 100vh; color: #ffffff; }
+        header { background-color: #0f3460; border-bottom: 2px solid #ff2e63; padding: 20px 0; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
         .logo-section { display: flex; align-items: center; }
         .logo-section img { height: 200px; width: auto; }
-
         nav { display: flex; gap: 15px; }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 25px;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-
+        nav a { color: #ffffff; text-decoration: none; padding: 10px 25px; border-radius: 5px; font-size: 1em; font-weight: 500; transition: background-color 0.3s ease; }
         nav a:hover { background-color: rgba(233, 69, 96, 0.3); }
         nav a.active { background-color: #e94560; }
-
         .container { max-width: 1400px; margin: 0 auto; padding: 40px; }
-
-        .aviso {
-            background-color: #0f3460;
-            border-left: 4px solid #e94560;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
+        .aviso { background-color: #0f3460; border-left: 4px solid #e94560; padding: 20px; margin: 20px 0; border-radius: 5px; }
         .aviso h2 { color: #e94560; margin-bottom: 10px; }
-
-        .page-title {
-            text-align: center;
-            margin: 40px 0;
-            font-size: 2.2em;
-            color: #e94560;
-            font-weight: 700;
-        }
-
-        .jogos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .jogo-card {
-            background-color: #0f3460;
-            border-radius: 10px;
-            padding: 30px 20px;
-            text-align: center;
-            border: 2px solid #16213e;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
+        .page-title { text-align: center; margin: 40px 0; font-size: 2.2em; color: #e94560; font-weight: 700; }
+        .jogos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 30px; }
+        .jogo-card { background-color: #0f3460; border-radius: 10px; padding: 30px 20px; text-align: center; border: 2px solid #16213e; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit; display: block; }
         .jogo-card:hover { border-color: #ff2e63; transform: translateY(-5px); }
-
         .jogo-icon { margin-bottom: 15px; }
         .jogo-icon img { max-width: 100%; height: auto; }
-
         .jogo-card h3 { color: #ffffff; margin: 15px 0; font-size: 1.3em; }
         .jogo-card p { color: #ddd; font-size: 0.95em; margin-bottom: 15px; }
-
-        .badge {
-            display: inline-block;
-            background-color: #e94560;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        .em-breve { background-color: #16213e; opacity: 0.7; cursor: default; }
-        .em-breve:hover { transform: none; border-color: #16213e; }
-
+        .badge { display: inline-block; background-color: #e94560; color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.9em; font-weight: 600; margin-top: 10px; }
         .galo-icon svg { width: 110px; height: 110px; margin: 10px auto 0; display: block; }
-
-        footer {
-            background-color: #0f3460;
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-            border-top: 2px solid #ff2e63;
-        }
-
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; gap: 20px; padding: 20px; }
-            nav { flex-wrap: wrap; justify-content: center; }
-            .jogos-grid { grid-template-columns: 1fr; }
-        }
+        footer { background-color: #0f3460; text-align: center; padding: 30px; margin-top: 60px; border-top: 2px solid #ff2e63; }
+        @media (max-width: 768px) { .header-container { flex-direction: column; gap: 20px; padding: 20px; } nav { flex-wrap: wrap; justify-content: center; } .jogos-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo-section">
-                <a href="Inicio.html">
-                    <img src="Nova pasta/LOGO!!.png" alt="GameWorld Logo">
-                </a>
+                <a href="index.html"><img src="LOGO!!.png" alt="GameWorld Logo"></a>
             </div>
             <nav>
-                <a href="Index.html">Início</a>
+                <a href="index.html">Início</a>
                 <a href="jogos.html" class="active">Jogos</a>
                 <a href="sobre.html">Sobre</a>
             </nav>
@@ -154,7 +58,7 @@
 
             <a href="https://afuga1.netlify.app/" target="_blank" class="jogo-card">
                 <div class="jogo-icon">
-                    <img src="Nova pasta/a_fuga-removebg-preview.png" alt="A Fuga" width="250">
+                    <img src="a_fuga-removebg-preview.png" alt="A Fuga" width="250">
                 </div>
                 <h3>A Fuga</h3>
                 <p>Jogo de aventura emocionante!</p>
@@ -163,14 +67,13 @@
 
             <a href="https://cacaasmoedas.netlify.app/" target="_blank" class="jogo-card">
                 <div class="jogo-icon">
-                    <img src="Nova pasta/Caça_às_moedas_de_carro-removebg-preview.png" alt="Caça às moedas" width="250">
+                    <img src="Caça_às_moedas_de_carro-removebg-preview.png" alt="Caça às moedas" width="250">
                 </div>
                 <h3>Caça as moedas Carro</h3>
                 <p>Jogo de carros</p>
                 <span class="badge">Jogar!</span>
             </a>
 
-            <!-- JOGO DO GALO -->
             <a href="jogo-do-galo.html" class="jogo-card">
                 <div class="jogo-icon galo-icon">
                     <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -193,7 +96,6 @@
                 <span class="badge">Jogar!</span>
             </a>
 
-            <!-- SNAKE -->
             <a href="snake.html" class="jogo-card">
                 <div class="jogo-icon galo-icon">
                     <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -214,7 +116,6 @@
                 <span class="badge">Jogar!</span>
             </a>
 
-            <!-- BREAKOUT -->
             <a href="breakout.html" class="jogo-card">
                 <div class="jogo-icon galo-icon">
                     <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -236,17 +137,13 @@
                 <span class="badge">Jogar!</span>
             </a>
 
-            <!-- PEDRA PAPEL TESOURA -->
             <a href="pedra-papel-tesoura.html" class="jogo-card">
                 <div class="jogo-icon galo-icon">
                     <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Pedra -->
                         <circle cx="28" cy="70" r="18" fill="#ff2e63" opacity=".9"/>
                         <text x="28" y="76" text-anchor="middle" font-size="18">🪨</text>
-                        <!-- Papel -->
                         <rect x="40" y="18" width="30" height="36" rx="5" fill="#4a90e2" opacity=".9"/>
                         <text x="55" y="42" text-anchor="middle" font-size="18">📄</text>
-                        <!-- Tesoura -->
                         <circle cx="82" cy="70" r="18" fill="#1d9e75" opacity=".9"/>
                         <text x="82" y="76" text-anchor="middle" font-size="18">✂️</text>
                     </svg>
@@ -260,7 +157,7 @@
     </div>
 
     <footer>
-        <img src="Nova pasta/Nome do Site!.png" alt="GameWorld" width="130">
+        <img src="Nome do Site!.png" alt="GameWorld" width="130">
     </footer>
 </body>
 </html>
